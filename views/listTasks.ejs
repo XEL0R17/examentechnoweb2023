@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Interface television</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  
+  <body>
+    <h1>Gestion de television</h1>
+    <ul>
+      <% for(task of tasks) { %>
+        <li><%= task.task %> - <a href="/delete/<%= task.id %>">Delete</a></li>
+      <% } %>
+    </ul>
+    <form action="/add" method="POST">
+      <h1>Achat de télévions</h1>
+      <input name="task" />
+      <input type="submit" />
+    </form>
+  </body>
+
+</html>

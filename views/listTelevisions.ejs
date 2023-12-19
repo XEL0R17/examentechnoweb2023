@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+    <title>Interface television</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1 class="title">Gestion de televisions</h1></br>
+  <h1 class="element">Liste de télévisions disponibles</h1></br>
+  <ul>
+    <% for(const tv of televisions) { %>
+      <li>
+        Marque : <%= tv.marque %> -
+        Prix : <%= tv.prix %>€ -
+        Taille : <%= tv.taille %> inch
+        <form action="/add" method="post">
+            
+            <input type="hidden" name="marque" value="<%= tv.marque %>" />
+            <input type="hidden" name="prix" value="<%= tv.prix %>" />
+            <input type="hidden" name="taille" value="<%= tv.taille %>" />
+
+            <input type="submit" value="acheter" />
+        </form>
+        
+      </li></br>
+    <% } %>
+  </ul>
+  <h1 class="element">Achats réalisés</h1>
+        <ul>
+            <% for(const achat of achats) { %>
+              <li>
+                Marque : <%= achat.marque %> - 
+                Prix : <%= achat.prix %> - 
+                Taille : <%= achat.taille %>
+                <form action="/usure" method="post">
+                  <input type="hidden" name="marque" value="<%= achat.marque %>">
+                  <input type="hidden" name="prix" value="<%= achat.prix %>">
+                  <input type="hidden" name="taille" value="<%= achat.taille %>">
+                  <input type="submit" value="Envoyer" />
+                </form>
+              </li>
+            <% } %>
+          </ul>
+          
+
+
+    <h1 class="element">TV cassées</h1>
+    
+
+
+</body>
+</html>
