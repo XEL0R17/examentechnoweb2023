@@ -16,36 +16,45 @@
         Taille : <%= tv.taille %> inch
         <form action="/add" method="post">
             
-            <input type="hidden" name="marque" value="<%= tv.marque %>" />
-            <input type="hidden" name="prix" value="<%= tv.prix %>" />
-            <input type="hidden" name="taille" value="<%= tv.taille %>" />
-
-            <input type="submit" value="acheter" />
+          <input type="hidden" name="marque" value="<%= tv.marque %>" />
+          <input type="hidden" name="prix" value="<%= tv.prix %>" />
+          <input type="hidden" name="taille" value="<%= tv.taille %>" />
+          <input type="submit" value="acheter" />
         </form>
         
       </li></br>
     <% } %>
   </ul>
   <h1 class="element">Achats réalisés</h1>
-        <ul>
-            <% for(const achat of achats) { %>
-              <li>
-                Marque : <%= achat.marque %> - 
-                Prix : <%= achat.prix %> - 
-                Taille : <%= achat.taille %>
-                <form action="/usure" method="post">
-                  <input type="hidden" name="marque" value="<%= achat.marque %>">
-                  <input type="hidden" name="prix" value="<%= achat.prix %>">
-                  <input type="hidden" name="taille" value="<%= achat.taille %>">
-                  <input type="submit" value="Envoyer" />
-                </form>
-              </li>
-            <% } %>
-          </ul>
-          
+  <ul>
+    <% for(const achat of achats) { %>
+      <li>
+          Marque : <%= achat.marque %> - 
+          Prix : <%= achat.prix %> - 
+          Taille : <%= achat.taille %>
+          <form action="/addTvCassee" method="post">
 
+            <input type="hidden" name="marque" value="<%= achat.marque %>"/>
+            <input type="hidden" name="prix" value="<%= achat.prix %>"/>
+            <input type="hidden" name="taille" value="<%= achat.taille %>"/>
+            <input type="text" name="descriptionCasse" placeholder="Description de la casse" required />
+            <input type="submit" value="Cliquer si la TV est casées" />
+          </form>
+      </li></br>
+    <% } %>
+  </ul>
+  <h1 class="element">TV cassées</h1>
+<ul>
+  <% for(const tvCassee of tvCassees) { %>
+    <li>
+        Marque : <%= tvCassee.marque %> - 
+        Prix : <%= tvCassee.prix %> - 
+        Taille : <%= tvCassee.taille %> - 
+        Description de la casse : <%= tvCassee.descriptionCasse %>
+    </li></br>
+  <% } %>
+</ul>
 
-    <h1 class="element">TV cassées</h1>
     
 
 
