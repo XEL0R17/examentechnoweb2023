@@ -37,7 +37,7 @@ h1{
 table, caption, th, td {
 
     border: 2px solid skyblue;
-      border-collapse: collapse;
+    border-collapse: collapse;
     
     }
     caption, th, td {
@@ -49,7 +49,7 @@ table, caption, th, td {
     table, caption, th, td {
     
     border: 2px solid skyblue;
-      border-collapse: collapse;
+    border-collapse: collapse;
     
     }
     caption, th, td {
@@ -60,7 +60,7 @@ table, caption, th, td {
     
     th {
     
-    background-color: blue;
+    background-color: rgba(239, 226, 226, 0.689);
     
     }
     

@@ -11,11 +11,11 @@
   <table>
     <colgroup>
 
-      <col style="width:200px">
+      <col style="width: 500px;">
       
-      <col>
+      <col style="width: 500px;">
       
-      
+      <col style="width: 100px;">
       
       </colgroup>
     <tr>
@@ -27,12 +27,11 @@
       <tr>
         <td><%= voc.word %></td>
         <td><%= voc.translation %></td>
-        <td><%= voc.action %></td>
         <td>
-          <form action="/add" method="post">
-            <input type="hidden" name="Word" value="<%= voc.word %>" />
-            <input type="hidden" name="prix" value="<%= voc.translation %>" />
-            <input type="hidden" name="taille" value="<%= voc.action %>" />
+          <form action="/addvoc" method="post">
+            <input type="hidden" name="word" value="<%= voc.word %>" />
+            <input type="hidden" name="translation" value="<%= voc.translation %>" />
+            <input type="submit" value="delete" />
           </form>
         </td>
       </tr>

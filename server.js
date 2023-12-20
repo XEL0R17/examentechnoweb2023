@@ -1,5 +1,6 @@
 import express from 'express';
 import Vocabulaire from './models/listeVocabulaire.js';
+import TvCassee from './TvCassees.js'
 
 
 
@@ -7,8 +8,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.post("/add", async function (req, res) {
-  const achat = new Achat({
+app.post("/addvoc", async function (req, res) {
+  const vocabulaire = new Vocabulaire({
      // ou toute autre clé étrangère nécessaire
     marque: req.body.marque, // Assurez-vous que le formulaire contient un champ 'marque'
     prix: req.body.prix, // Assurez-vous que le formulaire contient un champ 'prix'
@@ -40,7 +41,7 @@ app.get("/delete/:id", async function (req, res) {
 
 
 
-app.get("/", async function (req, res) {
+app.get("/vocabulaire", async function (req, res) {
   const vocabulaires = await Vocabulaire.loadMany(); // Récupérez les données Vocabulaire
 
   res.render('vocabulairelist.ejs', {
