@@ -11,7 +11,7 @@
   <table>
     <colgroup>
 
-      <col style="width: 500px;">
+      <col style="width: 100px;">
       
       <col style="width: 500px;">
       
@@ -28,14 +28,16 @@
         <td><%= voc.word %></td>
         <td><%= voc.translation %></td>
         <td>
-          <form action="/addvoc" method="post">
-            <input type="hidden" name="word" value="<%= voc.word %>" />
-            <input type="hidden" name="translation" value="<%= voc.translation %>" />
-            <input type="submit" value="delete" />
-          </form>
+          <input type="submit" value="Delete">
         </td>
       </tr>
     <% } %>
   </table>
+  <h2 class="element">Ajouter un mot</h2>
+  <form action="/addvoc" method="post">
+    <input type="text" placeholder="mot en anglais" required>
+    <input type="text" placeholder="mot en français"required>
+    <input type="submit" value="Ajouter" />
+  </form>
 </body>
 </html>
