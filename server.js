@@ -10,23 +10,24 @@ app.use(express.static('public'));
 app.post("/addvoc", async function (req, res) {
   const vocabulaire = new Vocabulaire({
      
-    marque: req.body.word, 
-    prix: req.body.translation, 
-    taille: req.body.action 
+    word: req.body.word, 
+    translation: req.body.translation, 
+    action: req.body.action 
   });
   
   await vocabulaire.save();
-  res.redirect('/'); 
+  res.redirect('/vocabulaire'); 
 });
 
 
+app.get("/", async function (req, res) {
+  
 
-app.get("/delete/:id", async function (req, res) {
-  await Task.delete({ id: req.params.id });
-  res.redirect('/');
+  res.render('pageprincipale.ejs', {
+
+    
+  });
 });
-
-
 
 app.get("/vocabulaire", async function (req, res) {
   const vocabulaires = await Vocabulaire.loadMany(); // Récupérez les données Vocabulaire
