@@ -8,15 +8,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.post("/addvoc", async function (req, res) {
-  const vocabulaire = new Vocabulaire({
-     
-    word: req.body.word, 
-    translation: req.body.translation, 
-    action: req.body.action 
-  });
-  
+  const vocabulaire = new Vocabulaire();
+  vocabulaire.vocabulaire = req.body.vocabulaire
   await vocabulaire.save();
-  res.redirect('/vocabulaire'); 
+  res.redirect('/vocabulaire');
 });
 
 
