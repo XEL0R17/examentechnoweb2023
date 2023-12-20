@@ -36,7 +36,31 @@ h1{
 
 table, caption, th, td {
 
-border: 2px solid skyblue;
-  border-collapse: collapse;
-
-}
+    border: 2px solid skyblue;
+      border-collapse: collapse;
+    
+    }
+    caption, th, td {
+    
+    padding: 8px;
+    
+    }
+    
+    table, caption, th, td {
+    
+    border: 2px solid skyblue;
+      border-collapse: collapse;
+    
+    }
+    caption, th, td {
+    
+    padding: 8px;
+    
+    }
+    
+    th {
+    
+    background-color: blue;
+    
+    }
+    
