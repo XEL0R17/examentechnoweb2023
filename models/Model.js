@@ -5,7 +5,7 @@ const connection = await mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'azerty',
-  database: 'henni',
+  database: 'vocabulaire',
   Promise: bluebird,
 });
 

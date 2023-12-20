@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+    <title>Vocabulaire</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1 class="title">Apprendre l'anglais</h1></br>
+  <h1 class="element">Liste de mots</h1></br>
+  <ul>
+    <% for(const voc of vocabulaires) { %>
+      <li>
+        Word : <%= voc.word %> -
+        Translation : <%= voc.translation %> -
+        Action : <%= voc.action %> 
+        <form action="/add" method="post">
+            
+          <input type="hidden" name="Word" value="<%= voc.word %>" />
+          <input type="hidden" name="prix" value="<%= voc.translation %>" />
+          <input type="hidden" name="taille" value="<%= voc.action %>" />
+        </form>
+        
+      </li></br>
+    <% } %>
+  </ul>

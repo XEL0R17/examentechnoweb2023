@@ -1,8 +1,7 @@
 import express from 'express';
-import Task from './models/Task.js';
-import Television from './models/Televisions.js';
-import Achat from './models/Achats.js';
-import TvCassee from './models/TvCassees.js';
+import Vocabulaire from './models/listeVocabulaire.js';
+
+
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -42,14 +41,11 @@ app.get("/delete/:id", async function (req, res) {
 
 
 app.get("/", async function (req, res) {
-  const televisions = await Television.loadMany(); // Récupérez les données de télévisions
-  const achats = await Achat.loadMany();
-  const tvCassees = await TvCassee.loadMany(); // Récupérez les données de télévisions cassées
+  const vocabulaires = await Vocabulaire.loadMany(); // Récupérez les données Vocabulaire
 
-  res.render('listTelevisions.ejs', {
-    televisions: televisions,
-    achats: achats,
-    tvCassees: tvCassees // Ajoutez les données de télévisions cassées à la vue
+  res.render('vocabulairelist.ejs', {
+    vocabulaires: vocabulaires,
+    
   });
 });
 
