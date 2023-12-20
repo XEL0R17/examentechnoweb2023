@@ -1,6 +1,5 @@
 import express from 'express';
 import Vocabulaire from './models/listeVocabulaire.js';
-import TvCassee from './TvCassees.js'
 
 
 
@@ -10,28 +9,16 @@ app.use(express.static('public'));
 
 app.post("/addvoc", async function (req, res) {
   const vocabulaire = new Vocabulaire({
-     // ou toute autre clé étrangère nécessaire
-    marque: req.body.marque, // Assurez-vous que le formulaire contient un champ 'marque'
-    prix: req.body.prix, // Assurez-vous que le formulaire contient un champ 'prix'
-    taille: req.body.taille // ...
+     
+    marque: req.body.word, 
+    prix: req.body.translation, 
+    taille: req.body.action 
   });
   
-  await achat.save();
-  res.redirect('/'); // ou vers une page de confirmation
+  await vocabulaire.save();
+  res.redirect('/'); 
 });
 
-
-app.post("/addTvCassee", async function (req, res) {
-  const tvCassee = new TvCassee({
-    marque: req.body.marque, // Assurez-vous que le formulaire contient un champ 'marque'
-    prix: req.body.prix, // Assurez-vous que le formulaire contient un champ 'prix'
-    taille: req.body.taille, // Assurez-vous que le formulaire contient un champ 'taille'
-    descriptionCasse: req.body.descriptionCasse // Assurez-vous que le formulaire contient un champ 'descriptionCasse'
-  });
-  
-  await tvCassee.save();
-  res.redirect('/'); // ou vers une page de confirmation ou de succès
-});
 
 
 app.get("/delete/:id", async function (req, res) {
